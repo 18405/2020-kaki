@@ -68,6 +68,13 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text='私だよ♡')
          )
+    elif '今日の松井ちゃん' in text:
+         imageUrl = 'https://sumple-oumugaeshi.herokuapp.com/static/images/matsui2.jpg'
+         thumUrl = 'https://sumple-oumugaeshi.herokuapp.com/static/images/matsui1.jpg'
+         line_bot_api.broadcast(
+            [TextSendMessage(text="今日の松井の状態です！"),
+            ImageSendMessage(imageUrl, thumUrl)]
+        )
     else:
     	line_bot_api.reply_message(
             event.reply_token,
