@@ -75,6 +75,11 @@ def handle_message(event):
             [TextSendMessage(text="今日の松井の状態です！"),
             ImageSendMessage(imageUrl, thumUrl)]
         )
+    elif '野田の点数は？' in text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='国語:86\n微積:5')
+         )
     else:
     	line_bot_api.reply_message(
             event.reply_token,
