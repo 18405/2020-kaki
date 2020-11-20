@@ -18,9 +18,6 @@ from linebot.models import (
 import os
 import json
 
-# ユーザIDの取得する
-profile = line_bot_api.get_profile(event.source.user_id)
-
 # ウェブアプリケーションフレームワーク:flaskの定義
 app = Flask(__name__)
 
@@ -60,6 +57,10 @@ def callback():
 # MessageEvent　テキストメッセージ受け取った時
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+
+    # ユーザIDの取得する
+    profile = line_bot_api.get_profile(event.source.user_id)
+    
     text = event.message.text
     if 'こんにちは' in text:
         line_bot_api.reply_message(
