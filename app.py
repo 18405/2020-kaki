@@ -18,7 +18,7 @@ from linebot.models import (
 import os
 import json
 
-from push import test_push
+from push import test_push # test_pushをimport
 
 # ウェブアプリケーションフレームワーク:flaskの定義
 app = Flask(__name__)
