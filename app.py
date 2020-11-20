@@ -18,7 +18,7 @@ from linebot.models import (
 import os
 import json
 
-form push import test
+from push import test_push
 
 # ウェブアプリケーションフレームワーク:flaskの定義
 app = Flask(__name__)
@@ -97,8 +97,9 @@ def handle_message(event):
         event.reply_token,
         [TextSendMessage(text=t)]
         )
-    elif '通知'　in text:
+    elif '通知' in text:
         test_push()
+
     else:
     	line_bot_api.reply_message(
             event.reply_token,
