@@ -9,7 +9,7 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
 
 def main():
-    user_id = "プッシュ通知を送りたLINEユーザーのuser_id"
+    user_id = ""
 
     messages = TextSendMessage(text=f"こんにちは😁\n\n"
                                     f"最近はいかがお過ごしでしょうか?")
