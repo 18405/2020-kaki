@@ -18,6 +18,8 @@ from linebot.models import (
 import os
 import json
 
+form push import test
+
 # ウェブアプリケーションフレームワーク:flaskの定義
 app = Flask(__name__)
 
@@ -60,7 +62,7 @@ def handle_message(event):
 
     # ユーザIDの取得する
     profile = line_bot_api.get_profile(event.source.user_id)
-    
+
     text = event.message.text
     if 'こんにちは' in text:
         line_bot_api.reply_message(
@@ -94,7 +96,9 @@ def handle_message(event):
         line_bot_api.reply_message(
         event.reply_token,
         [TextSendMessage(text=t)]
-        )  
+        )
+    elif '通知'　in text:
+        test_push()
     else:
     	line_bot_api.reply_message(
             event.reply_token,
