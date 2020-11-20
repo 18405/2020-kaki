@@ -99,6 +99,17 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text='「' + text + '」って何？')
          )
+    elif 'ユーザーID' in text:
+        # profile.display_name #-> 表示名
+        # profile.user_id #-> ユーザーID
+        # profile.image_url #-> 画像のURL
+        # profile.status_message #-> ステータスメッセージ
+        t = "user_name : {0} \nuser_id : {1} ".format(profile.display_name, profile.user_id)
+        print(t)
+        line_bot_api.reply_message(
+        event.reply_token,
+        [TextSendMessage(text=t)]
+        )
 
 
 
