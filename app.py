@@ -80,11 +80,6 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text='国語:86\n微積:5')
          )
-    elif '大形の点数は？' in text:
-            line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='国語:1\n微積:2')
-         )
     else:
     	line_bot_api.reply_message(
             event.reply_token,
